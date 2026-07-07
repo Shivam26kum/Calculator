@@ -1,63 +1,63 @@
-// const display = document.getElementById("display");
+const display = document.getElementById("display");
 
-// function append(value) {
-//     display.value += value;
-// }
+function append(value) {
+    display.value += value;
+}
 
-// function clearDisplay() {
-//     display.value = "";
-// }
+function clearDisplay() {
+    display.value = "";
+}
 
-// function deleteLast() {
-//     display.value = display.value.slice(0, -1);
-// }
+function deleteLast() {
+    display.value = display.value.slice(0, -1);
+}
 
-// function calculate() {
+function calculate() {
 
-//     try {
+    try {
 
-//         let expression = display.value.replace(/%/g, "/100");
+        let expression = display.value.replace(/%/g, "/100");
 
-//         display.value = eval(expression);
+        display.value = eval(expression);
 
-//     } catch {
+    } catch {
 
-//         display.value = "Error";
+        display.value = "Error";
 
-//         setTimeout(() => {
-//             display.value = "";
-//         }, 1000);
-//     }
+        setTimeout(() => {
+            display.value = "";
+        }, 1000);
+    }
 
-// }
+}
 
-// // Keyboard Support
+// Keyboard Support
 
-// document.addEventListener("keydown", (e) => {
+document.addEventListener("keydown", (e) => {
 
-//     const key = e.key;
+    const key = e.key;
 
-//     if (
-//         (key >= "0" && key <= "9") ||
-//         key === "." ||
-//         key === "+" ||
-//         key === "-" ||
-//         key === "*" ||
-//         key === "/" ||
-//         key === "%"
-//     ) {
-//         append(key);
-//     }
+    if (
+        (key >= "0" && key <= "9") ||
+        key === "." ||
+        key === "+" ||
+        key === "-" ||
+        key === "*" ||
+        key === "/" ||
+        key === "%"
+    ) {
+        append(key);
+    }
 
-//     if (key === "Enter") {
-//         calculate();
-//     }
+    if (key === "Enter") {
+        calculate();
+    }
 
-//     if (key === "Backspace") {
-//         deleteLast();
-//     }
+    if (key === "Backspace") {
+        deleteLast();
+    }
 
-//     if (key === "Escape") {
-//         clearDisplay();
-//     }
-// });
+    if (key === "Escape") {
+        clearDisplay();
+    }
+});
